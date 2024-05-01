@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Heure et Date</title>
+    <style>
+        @font-face {
+            font-family: 'Duplet';
+            src: url('./fonts/Duplet-Regular.woff2') format('woff2'),
+                url('./fonts/Duplet-Regular.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Duplet';
+            src: url('./fonts/Duplet-Extralight.woff2') format('woff2'),
+                url('./fonts/Duplet-Extralight.woff') format('woff');
+            font-weight: 200;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Duplet';
+            src: url('./fonts/Duplet-Light.woff2') format('woff2'),
+                url('./fonts/Duplet-Light.woff') format('woff');
+            font-weight: 300;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Duplet';
+            src: url('./fonts/Duplet-Italic.woff2') format('woff2'),
+                url('./fonts/Duplet-Italic.woff') format('woff');
+            font-weight: normal;
+            font-style: italic;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Duplet';
+            src: url('./fonts/Duplet-ExtralightItalic.woff2') format('woff2'),
+                url('./fonts/Duplet-ExtralightItalic.woff') format('woff');
+            font-weight: 200;
+            font-style: italic;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Duplet';
+            src: url('./fonts/Duplet-SemiboldItalic.woff2') format('woff2'),
+                url('./fonts/Duplet-SemiboldItalic.woff') format('woff');
+            font-weight: 500;
+            font-style: italic;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Duplet';
+            src: url('./fonts/Duplet-LightItalic.woff2') format('woff2'),
+                url('./fonts/Duplet-LightItalic.woff') format('woff');
+            font-weight: 300;
+            font-style: italic;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Duplet';
+            src: url('./fonts/Duplet-ThinItalic.woff2') format('woff2'),
+                url('./fonts/Duplet-ThinItalic.woff') format('woff');
+            font-weight: 100;
+            font-style: italic;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Duplet';
+            src: url('./fonts/Duplet-Bold.woff2') format('woff2'),
+                url('./fonts/Duplet-Bold.woff') format('woff');
+            font-weight: bold;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Duplet';
+            src: url('./fonts/Duplet-Thin.woff2') format('woff2'),
+                url('./fonts/Duplet-Thin.woff') format('woff');
+            font-weight: 100;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Duplet';
+            src: url('./fonts/Duplet-Semibold.woff2') format('woff2'),
+                url('./fonts/Duplet-Semibold.woff') format('woff');
+            font-weight: 500;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Duplet';
+            src: url('./fonts/Duplet-BoldItalic.woff2') format('woff2'),
+                url('./fonts/Duplet-BoldItalic.woff') format('woff');
+            font-weight: bold;
+            font-style: italic;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Duplet';
+            src: url('./fonts/Duplet-Extrabold.woff2') format('woff2'),
+                url('./fonts/Duplet-Extrabold.woff') format('woff');
+            font-weight: bold;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Duplet';
+            src: url('./fonts/Duplet-ExtraboldItalic.woff2') format('woff2'),
+                url('./fonts/Duplet-ExtraboldItalic.woff') format('woff');
+            font-weight: bold;
+            font-style: italic;
+            font-display: swap;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            height: 100vh;
+            background-color: #FFFFFF;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #2B2A67;
+            font-family: 'Duplet', sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .time {
+            font-size: 100px;
+            font-weight:bold;
+        }
+
+        .date {
+            font-size: 40px;
+            margin-top: 20px;
+            font-weight:bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="time" id="time"></div>
+        <div class="date" id="date"></div>
+    </div>
+
+    <script>
+
+        var timeElement = document.getElementById("time");
+        var dateElement = document.getElementById("date");
+
+        function updateTime() {
+            var now = new Date();
+            var hours = now.getHours();
+            var minutes = now.getMinutes();
+            var day = now.getDate();
+            var month = now.getMonth() + 1;
+            var year = now.getFullYear();
+            var daysOfWeek = ["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"];
+            var dayOfWeek = daysOfWeek[now.getDay()];
+
+            // Ajoute un zéro devant les heures et les minutes si elles sont inférieures à 10
+            hours = hours < 10 ? "0" + hours : hours;
+            minutes = minutes < 10 ? "0" + minutes : minutes;
+
+            timeElement.textContent = hours + ":" + minutes;
+
+            // Construit la date au format "JEUDI 1ER JUIN 2023"
+            var formattedDate = dayOfWeek + " " + day + getOrdinalIndicator(day) + " " + getMonthName(month) + " " + year;
+            dateElement.textContent = formattedDate;
+        }
+
+        function getOrdinalIndicator(day) {
+            // Retourne l'indicateur ordinal correspondant au jour
+            if (day === 1) {
+                return "er";
+            }
+            else {
+                return '';
+            }
+        }
+
+        function getMonthName(month) {
+            // Retourne le nom du mois correspondant au mois
+            var months = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"];
+            return months[month - 1];
+        }
+
+        // Met à jour l'heure et la date chaque seconde
+        setInterval(updateTime, 1000);
+    </script>
+</body>
+</html>

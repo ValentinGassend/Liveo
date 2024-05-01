@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "/home/valentin/Desktop/MemoRoom/modules/_Liveo/HUB/WS_and_NLU_and_TTS_and_DatabaseReminder.py", line 2, in <module>
+    from NLU.nlu import Nlu
+  File "/home/valentin/Desktop/MemoRoom/modules/_Liveo/HUB/NLU/nlu.py", line 5, in <module>
+    from snips_nlu import SnipsNLUEngine
+ModuleNotFoundError: No module named 'snips_nlu'

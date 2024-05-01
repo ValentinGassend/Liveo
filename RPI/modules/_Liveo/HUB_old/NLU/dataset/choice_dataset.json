@@ -1,0 +1,140 @@
+{
+    "entities": {
+        "action_type": {
+            "automatically_extensible": true,
+            "data": [
+                {
+                    "value": "demande de récapitulatif",
+                    "synonyms": [
+                        "besoin de récapitulatif",
+                        "récapitulation",
+                        "vérification des rendez-vous"
+                    ]
+                },
+                {
+                    "value": "saisie de rendez-vous",
+                    "synonyms": [
+                        "prise de rendez-vous",
+                        "planification de rendez-vous"
+                    ]
+                },
+                {
+                    "value": "annulation de rendez-vous",
+                    "synonyms": [
+                        "suppression de rendez-vous",
+                        "désistement"
+                    ]
+                }
+            ],
+            "matching_strictness": 1.0,
+            "use_synonyms": true
+        },
+        "snips/datetime": {}
+    },
+    "intents": {
+        "actionIntent": {
+            "utterances": [
+                {
+                    "data": [
+                        {
+                            "text": "Je souhaite un récapitulatif de mes rendez-vous"
+                        },
+                        {
+                            "entity": "action_type",
+                            "slot_name": "action_type",
+                            "text": "demande de récapitulatif"
+                        }
+                    ]
+                },
+                {
+                    "data": [
+                        {
+                            "text": "Je veux prendre un rendez-vous"
+                        },
+                        {
+                            "entity": "action_type",
+                            "slot_name": "action_type",
+                            "text": "saisie de rendez-vous"
+                        },
+                        {
+                            "text": " le "
+                        },
+                        {
+                            "entity": "snips/datetime",
+                            "slot_name": "meeting_time",
+                            "text": "24 juillet à 15h"
+                        }
+                    ]
+                },
+                {
+                    "data": [
+                        {
+                            "text": "J'aimerais annuler mon rendez-vous du "
+                        },
+                        {
+                            "entity": "snips/datetime",
+                            "slot_name": "meeting_time",
+                            "text": "10 août à 10h"
+                        },
+                        {
+                            "text": " s'il vous plaît"
+                        },
+                        {
+                            "entity": "action_type",
+                            "slot_name": "action_type",
+                            "text": "annulation de rendez-vous"
+                        }
+                    ]
+                },
+                {
+                    "data": [
+                        {
+                            "text": "Est-ce que je peux avoir un aperçu de mes rendez-vous ?"
+                        },
+                        {
+                            "entity": "action_type",
+                            "slot_name": "action_type",
+                            "text": "demande de récapitulatif"
+                        }
+                    ]
+                },
+                {
+                    "data": [
+                        {
+                            "text": "Je souhaite planifier une consultation médicale pour le "
+                        },
+                        {
+                            "entity": "snips/datetime",
+                            "slot_name": "meeting_time",
+                            "text": "5 septembre à 9h"
+                        },
+                        {
+                            "text": " avec le Dr. Martin"
+                        },
+                        {
+                            "entity": "action_type",
+                            "slot_name": "action_type",
+                            "text": "saisie de rendez-vous"
+                        }
+                    ]
+                },
+                {
+                    "data": [
+                        {
+                            "text": "Je veux annuler mon rendez-vous de demain à 14h"
+                        },
+                        {
+                            "entity": "action_type",
+                            "slot_name": "action_type",
+                            "text": "annulation de rendez-vous"
+                        },
+                        {
+                            "text": ", s'il vous plaît"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "language": "fr"
+}

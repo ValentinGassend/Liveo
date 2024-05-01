@@ -1,0 +1,167 @@
+{
+    "entities": {
+        "meeting_type": {
+            "automatically_extensible": true,
+            "data": [
+                {
+                    "value": "réunion",
+                    "synonyms": [
+                        "reunion",
+                        "meeting"
+                    ]
+                },
+                {
+                    "value": "médical",
+                    "synonyms": [
+                        "médecin",
+                        "docteur",
+                        "consultation"
+                    ]
+                }
+            ],
+            "matching_strictness": 1.0,
+            "use_synonyms": true
+        }
+    },
+    "intents": {
+        "deleteAppointment": {
+            "utterances": [
+                {
+                    "data": [
+                        {
+                            "text": "Supprimer mon rendez-vous"
+                        }
+                    ]
+                },
+                {
+                    "data": [
+                        {
+                            "text": "Annuler ma réunion"
+                        }
+                    ]
+                },
+                {
+                    "data": [
+                        {
+                            "text": "Je ne peux pas assister à mon rendez-vous"
+                        }
+                    ]
+                },
+                {
+                    "data": [
+                        {
+                            "text": "Je veux annuler ma consultation médicale"
+                        }
+                    ]
+                },
+                {
+                    "data": [
+                        {
+                            "text": "J'aimerais supprimer mon rendez-vous de demain"
+                        }
+                    ]
+                },
+                {
+                    "data": [
+                        {
+                            "text": "Je ne peux pas venir à ma réunion prévue pour vendredi"
+                        }
+                    ]
+                }
+            ]
+        },
+        "summaryOfDay": {
+            "utterances": [
+                {
+                    "data": [
+                        {
+                            "text": "Résumé de ma journée"
+                        }
+                    ]
+                },
+                {
+                    "data": [
+                        {
+                            "text": "Que s'est-il passé aujourd'hui ?"
+                        }
+                    ]
+                },
+                {
+                    "data": [
+                        {
+                            "text": "Racontez-moi ma journée"
+                        }
+                    ]
+                },
+                {
+                    "data": [
+                        {
+                            "text": "Quels événements se sont produits aujourd'hui ?"
+                        }
+                    ]
+                },
+                {
+                    "data": [
+                        {
+                            "text": "Récapitulatif de ma journée"
+                        }
+                    ]
+                },
+                {
+                    "data": [
+                        {
+                            "text": "Expliquez-moi ce qui s'est passé aujourd'hui"
+                        }
+                    ]
+                }
+            ]
+        },
+        "addAppointment": {
+            "utterances": [
+                {
+                    "data": [
+                        {
+                            "text": "Ajouter un rendez-vous"
+                        }
+                    ]
+                },
+                {
+                    "data": [
+                        {
+                            "text": "Planifier une réunion"
+                        }
+                    ]
+                },
+                {
+                    "data": [
+                        {
+                            "text": "Prendre un rendez-vous médical"
+                        }
+                    ]
+                },
+                {
+                    "data": [
+                        {
+                            "text": "J'aimerais ajouter une réunion pour demain à 15h"
+                        }
+                    ]
+                },
+                {
+                    "data": [
+                        {
+                            "text": "Je souhaite prendre un rendez-vous médical chez le médecin"
+                        }
+                    ]
+                },
+                {
+                    "data": [
+                        {
+                            "text": "Planifiez une consultation médicale pour la semaine prochaine"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "language": "fr"
+}

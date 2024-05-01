@@ -1,0 +1,28 @@
+{
+  "rendezvous": [
+    {
+      "id": 0,
+      "date": "2023-05-27",
+      "heure": "14:00",
+      "lieu": "Bureau A101",
+      "titre": "R\u00e9union d'\u00e9quipe",
+      "informations_supplementaires": "Ordre du jour : discussion des projets en cours."
+    },
+    {
+      "id": 1,
+      "date": "2023-05-28",
+      "heure": "10:30",
+      "lieu": "Salle de conf\u00e9rence B",
+      "titre": "Pr\u00e9sentation client",
+      "informations_supplementaires": "Pr\u00e9senter les r\u00e9sultats de l'\u00e9tude de march\u00e9 au client ABC Corp."
+    },
+    {
+      "id": 2,
+      "date": "2023-05-29",
+      "heure": "15:00",
+      "lieu": "Caf\u00e9t\u00e9ria",
+      "titre": "Pause caf\u00e9",
+      "informations_supplementaires": "Rencontre informelle pour discuter des derniers d\u00e9veloppements de l'entreprise."
+    }
+  ]
+}

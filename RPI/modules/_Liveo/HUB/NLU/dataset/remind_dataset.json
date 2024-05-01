@@ -1,0 +1,98 @@
+{
+    "entities": {
+        "snips/date": {},
+        "snips/time": {}
+    },
+    "intents": {
+        "fixerRappel": {
+            "utterances": [
+                {
+                    "data": [
+                        {
+                            "text": "Rappelle-moi de prendre rendez-vous chez le médecin"
+                        },
+                        {
+                            "entity": "snips/date",
+                            "slot_name": "date",
+                            "text": "demain"
+                        },
+                        {
+                            "entity": "snips/time",
+                            "slot_name": "time",
+                            "text": " à 10h"
+                        }
+                    ]
+                },
+                {
+                    "data": [
+                        {
+                            "text": "N'oublie pas de fixer un rendez-vous professionnel"
+                        },
+                        {
+                            "entity": "snips/date",
+                            "slot_name": "date",
+                            "text": "vendredi"
+                        },
+                        {
+                            "entity": "snips/time",
+                            "slot_name": "time",
+                            "text": " à 14h30"
+                        }
+                    ]
+                },
+                {
+                    "data": [
+                        {
+                            "text": "Programme un rappel pour mon rendez-vous chez le dentiste"
+                        },
+                        {
+                            "entity": "snips/date",
+                            "slot_name": "date",
+                            "text": "mercredi"
+                        },
+                        {
+                            "entity": "snips/time",
+                            "slot_name": "time",
+                            "text": " à 16h"
+                        }
+                    ]
+                },
+                {
+                    "data": [
+                        {
+                            "text": "Mets un rappel pour prendre rendez-vous chez le coiffeur"
+                        },
+                        {
+                            "entity": "snips/date",
+                            "slot_name": "date",
+                            "text": "lundi"
+                        },
+                        {
+                            "entity": "snips/time",
+                            "slot_name": "time",
+                            "text": " à 11h"
+                        }
+                    ]
+                },
+                {
+                    "data": [
+                        {
+                            "text": "Rappelle-moi de fixer un rendez-vous avec mon avocat"
+                        },
+                        {
+                            "entity": "snips/date",
+                            "slot_name": "date",
+                            "text": "jeudi"
+                        },
+                        {
+                            "entity": "snips/time",
+                            "slot_name": "time",
+                            "text": " à 9h"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "language": "fr"
+}

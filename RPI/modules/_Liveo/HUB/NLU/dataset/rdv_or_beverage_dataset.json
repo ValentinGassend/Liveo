@@ -1,0 +1,263 @@
+{
+    "entities": {
+        "beverage_type": {
+            "automatically_extensible": true,
+            "data": [
+                {
+                    "value": "espresso",
+                    "synonyms": [
+                        "espressi",
+                        "espressos",
+                        "expresso",
+                        "expressos"
+                    ]
+                }
+            ],
+            "matching_strictness": 1.0,
+            "use_synonyms": true
+        },
+        "snips/number": {},
+        "meeting_type": {
+            "automatically_extensible": true,
+            "data": [
+                {
+                    "value": "réunion",
+                    "synonyms": [
+                        "meetting",
+                        "brainstorming"
+                    ]
+                },
+                {
+                    "value": "médical",
+                    "synonyms": [
+                        "médecin",
+                        "pharamcie",
+                        "infiermière",
+                        "spécialiste",
+                        "opticien"
+                    ]
+                },
+                {
+                    "value": "dîner",
+                    "synonyms": [
+                        "repas"
+                    ]
+                },
+                {
+                    "value": "déjeuner",
+                    "synonyms": [
+                        "repas"
+                    ]
+                }
+            ],
+            "matching_strictness": 1.0,
+            "use_synonyms": true
+        },
+        "snips/datetime": {}
+    },
+    "intents": {
+        "prepareBeverage": {
+            "utterances": [
+                {
+                    "data": [
+                        {
+                            "text": "Préparez-moi "
+                        },
+                        {
+                            "entity": "snips/number",
+                            "slot_name": "number_of_cups",
+                            "text": "deux"
+                        },
+                        {
+                            "text": " tasses de "
+                        },
+                        {
+                            "entity": "beverage_type",
+                            "slot_name": "beverage_type",
+                            "text": "cappuccino"
+                        },
+                        {
+                            "text": " s'il vous plaît"
+                        }
+                    ]
+                },
+                {
+                    "data": [
+                        {
+                            "text": "Préparez-moi une tasse de "
+                        },
+                        {
+                            "entity": "beverage_type",
+                            "slot_name": "beverage_type",
+                            "text": "thé"
+                        }
+                    ]
+                },
+                {
+                    "data": [
+                        {
+                            "text": "Je voudrais avoir "
+                        },
+                        {
+                            "entity": "snips/number",
+                            "slot_name": "number_of_cups",
+                            "text": "un"
+                        },
+                        {
+                            "text": " "
+                        },
+                        {
+                            "entity": "beverage_type",
+                            "slot_name": "beverage_type",
+                            "text": "latte fort"
+                        }
+                    ]
+                },
+                {
+                    "data": [
+                        {
+                            "text": "Pouvez-vous me faire un "
+                        },
+                        {
+                            "entity": "beverage_type",
+                            "slot_name": "beverage_type",
+                            "text": "espresso"
+                        },
+                        {
+                            "text": " s'il vous plaît ?"
+                        }
+                    ]
+                },
+                {
+                    "data": [
+                        {
+                            "text": "Servez-moi "
+                        },
+                        {
+                            "entity": "snips/number",
+                            "slot_name": "number_of_cups",
+                            "text": "trois"
+                        },
+                        {
+                            "text": " tasses de "
+                        },
+                        {
+                            "entity": "beverage_type",
+                            "slot_name": "beverage_type",
+                            "text": "thé au lait"
+                        }
+                    ]
+                },
+                {
+                    "data": [
+                        {
+                            "text": "Faites-moi un "
+                        },
+                        {
+                            "entity": "beverage_type",
+                            "slot_name": "beverage_type",
+                            "text": "café"
+                        }
+                    ]
+                },
+                {
+                    "data": [
+                        {
+                            "text": "Je veux un "
+                        },
+                        {
+                            "entity": "beverage_type",
+                            "slot_name": "beverage_type",
+                            "text": "thé"
+                        }
+                    ]
+                }
+            ]
+        },
+        "scheduleMeeting": {
+            "utterances": [
+                {
+                    "data": [
+                        {
+                            "text": "Planifiez une "
+                        },
+                        {
+                            "entity": "meeting_type",
+                            "slot_name": "meeting_type",
+                            "text": "réunion"
+                        },
+                        {
+                            "text": " pour "
+                        },
+                        {
+                            "entity": "snips/datetime",
+                            "slot_name": "meeting_time",
+                            "text": "demain à 15h"
+                        }
+                    ]
+                },
+                {
+                    "data": [
+                        {
+                            "text": "Planifiez un "
+                        },
+                        {
+                            "entity": "meeting_type",
+                            "slot_name": "meeting_type",
+                            "text": "dîner"
+                        },
+                        {
+                            "text": " pour "
+                        },
+                        {
+                            "entity": "snips/datetime",
+                            "slot_name": "meeting_time",
+                            "text": "vendredi prochain à 19h30"
+                        }
+                    ]
+                },
+                {
+                    "data": [
+                        {
+                            "text": "Organisez un "
+                        },
+                        {
+                            "entity": "meeting_type",
+                            "slot_name": "meeting_type",
+                            "text": "déjeuner"
+                        },
+                        {
+                            "text": " pour "
+                        },
+                        {
+                            "entity": "snips/datetime",
+                            "slot_name": "meeting_time",
+                            "text": "mercredi à midi"
+                        }
+                    ]
+                },
+                {
+                    "data": [
+                        {
+                            "text": "Programmez un rendez-vous"
+                        },
+                        {
+                            "entity": "meeting_type",
+                            "slot_name": "meeting_type",
+                            "text": "médical"
+                        },
+                        {
+                            "text": " pour "
+                        },
+                        {
+                            "entity": "snips/datetime",
+                            "slot_name": "meeting_time",
+                            "text": "lundi à 10h"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "language": "fr"
+}

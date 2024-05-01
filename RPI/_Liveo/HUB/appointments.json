@@ -1,0 +1,64 @@
+{
+  "rendezvous": [
+    {
+      "id": 0,
+      "date": "2023-05-27",
+      "heure": "14:00",
+      "lieu": "Bureau A101",
+      "titre": "R\u00e9union d'\u00e9quipe",
+      "informations_supplementaires": "Ordre du jour : discussion des projets en cours.",
+      "rappel": {
+        "date": "2023-05-27",
+        "heure": "13:30"
+      }
+    },
+    {
+      "id": 1,
+      "date": "2024-05-19",
+      "heure": "18:00",
+      "lieu": "rendez-vous chez le m\u00e9decin",
+      "titre": "",
+      "informations_supplementaires": "",
+      "rappel": {
+        "date": "2023-09-05",
+        "heure": "21:00"
+      }
+    },
+    {
+      "id": 2,
+      "date": "2024-05-19",
+      "heure": "18:00",
+      "lieu": "rendez-vous chez le m\u00e9decin",
+      "titre": "",
+      "informations_supplementaires": "",
+      "rappel": {
+        "date": "2023-06-27",
+        "heure": "17:00"
+      }
+    },
+    {
+      "id": 3,
+      "date": "2023-06-30",
+      "heure": "18:30",
+      "lieu": "rendez-vous chez le m\u00e9decin",
+      "titre": "",
+      "informations_supplementaires": "",
+      "rappel": {
+        "date": "2023-06-30",
+        "heure": "17:30"
+      }
+    },
+    {
+      "id": 4,
+      "date": "2023-06-16",
+      "heure": "18:00",
+      "lieu": "rendez-vous chez",
+      "titre": "",
+      "informations_supplementaires": "",
+      "rappel": {
+        "date": "2023-06-16",
+        "heure": "22:00"
+      }
+    }
+  ]
+}

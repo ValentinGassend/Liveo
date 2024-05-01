@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Liveo Dashboard</title>
+  <style>
+    @font-face {
+      font-family: 'Helvetica Neue';
+      src: url("{{ url_for('static', filename='fonts/HelveticaNeue-Bold.woff2') }}") format('woff2'),
+          url("{{ url_for('static', filename='fonts/HelveticaNeue-Bold.woff') }}") format('woff'),
+          url("{{ url_for('static', filename='fonts/HelveticaNeue-Bold.ttf') }}") format('truetype');
+      font-weight: bold;
+      font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'Helvetica Neue';
+        src: url('fonts/HelveticaNeue-BoldItalic.woff2') format('woff2'),
+            url('fonts/HelveticaNeue-BoldItalic.woff') format('woff'),
+            url('fonts/HelveticaNeue-BoldItalic.ttf') format('truetype');
+        font-weight: bold;
+        font-style: italic;
+    }
+
+    @font-face {
+        font-family: 'Helvetica Neue';
+        src: url('fonts/HelveticaNeue.woff2') format('woff2'),
+            url('fonts/HelveticaNeue.woff') format('woff'),
+            url('fonts/HelveticaNeue.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'Helvetica Neue';
+        src: url('fonts/HelveticaNeue-CondensedBlack.woff2') format('woff2'),
+            url('fonts/HelveticaNeue-CondensedBlack.woff') format('woff'),
+            url('fonts/HelveticaNeue-CondensedBlack.ttf') format('truetype');
+        font-weight: 900;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'Helvetica Neue';
+        src: url("{{ url_for('static', filename='fonts/HelveticaNeue-CondensedBold.woff2') }}") format('woff2'),
+            url("{{ url_for('static', filename='fonts/HelveticaNeue-CondensedBold.woff') }}") format('woff'),
+            url("{{ url_for('static', filename='fonts/HelveticaNeue-CondensedBold.ttf') }}") format('truetype');
+        font-weight: bold;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'Helvetica Neue';
+        src: url('fonts/HelveticaNeue-Light.woff2') format('woff2'),
+            url('fonts/HelveticaNeue-Light.woff') format('woff'),
+            url('fonts/HelveticaNeue-Light.ttf') format('truetype');
+        font-weight: 300;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'Helvetica Neue';
+        src: url('fonts/HelveticaNeue-LightItalic.woff2') format('woff2'),
+            url('fonts/HelveticaNeue-LightItalic.woff') format('woff'),
+            url('fonts/HelveticaNeue-LightItalic.ttf') format('truetype');
+        font-weight: 300;
+        font-style: italic;
+    }
+
+    @font-face {
+        font-family: 'Helvetica Neue';
+        src: url('fonts/HelveticaNeue-Italic.woff2') format('woff2'),
+            url('fonts/HelveticaNeue-Italic.woff') format('woff'),
+            url('fonts/HelveticaNeue-Italic.ttf') format('truetype');
+        font-weight: normal;
+        font-style: italic;
+    }
+
+    @font-face {
+        font-family: 'Helvetica Neue';        
+        src: url("{{ url_for('static', filename='fonts/HelveticaNeue-Medium.woff2') }}") format('woff2'),
+            url("{{ url_for('static', filename='fonts/HelveticaNeue-Medium.woff') }}") format('woff'),
+            url("{{ url_for('static', filename='fonts/HelveticaNeue-Medium.ttf') }}") format('truetype');
+        font-weight: 500;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'Helvetica Neue';
+        src: url('fonts/HelveticaNeue-MediumItalic.woff2') format('woff2'),
+            url('fonts/HelveticaNeue-MediumItalic.woff') format('woff'),
+            url('fonts/HelveticaNeue-MediumItalic.ttf') format('truetype');
+        font-weight: 500;
+        font-style: italic;
+    }
+
+    @font-face {
+        font-family: 'Helvetica Neue';
+        src: url('fonts/HelveticaNeue-Thin.woff2') format('woff2'),
+            url('fonts/HelveticaNeue-Thin.woff') format('woff'),
+            url('fonts/HelveticaNeue-Thin.ttf') format('truetype');
+        font-weight: 100;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'Helvetica Neue';
+        src: url('fonts/HelveticaNeue-ThinItalic.woff2') format('woff2'),
+            url('fonts/HelveticaNeue-ThinItalic.woff') format('woff'),
+            url('fonts/HelveticaNeue-ThinItalic.ttf') format('truetype');
+        font-weight: 100;
+        font-style: italic;
+    }
+
+    @font-face {
+        font-family: 'Helvetica Neue';
+        src: url('fonts/HelveticaNeue-UltraLight.woff2') format('woff2'),
+            url('fonts/HelveticaNeue-UltraLight.woff') format('woff'),
+            url('fonts/HelveticaNeue-UltraLight.ttf') format('truetype');
+        font-weight: 100;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'Helvetica Neue';
+        src: url('fonts/HelveticaNeue-UltraLightItalic.woff2') format('woff2'),
+            url('fonts/HelveticaNeue-UltraLightItalic.woff') format('woff'),
+            url('fonts/HelveticaNeue-UltraLightItalic.ttf') format('truetype');
+        font-weight: 100;
+        font-style: italic;
+    }
+
+
+
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 90vh;
+      width: fit-content;
+      margin: auto;
+      padding: 0;
+    }
+
+    .date {
+      font-family: 'Helvetica Neue';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 40px;
+      line-height: 49px;
+      color: #101328;
+    }
+
+    .meetingInfo {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .meetingTitle {
+      margin: 0;
+      font-family: 'Helvetica Neue';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 48px;
+      line-height: 59px;
+      color: #101328;
+    }
+
+    .sub {
+      width: 100%;
+    }
+
+    .time {
+      margin: 0;
+      font-family: 'Helvetica Neue';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 100px;
+      line-height: 100px;
+      height: fit-content;
+      color: #101328;
+    }
+
+    .connectState {
+      margin: 0;
+      font-family: 'Helvetica Neue';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 32px;
+      line-height: 39px;
+
+      color: #54BE92;
+    }
+
+    .resumeInfo {
+      font-family: 'Helvetica Neue';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 48px;
+      line-height: 59px;
+      color: #101328;
+    }
+
+    .reminderInfo {
+      margin: 0;
+      font-family: 'Helvetica Neue';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 32px;
+      line-height: 39px;
+      color: #54BE92;
+
+      display: grid;
+      justify-content: space-between;
+      grid-auto-flow: column;
+      column-gap: min(20px);
+    }
+
+    .meetingInfo-date {
+      margin: 0;
+      font-family: 'Helvetica Neue';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 29px;
+      color: #101328;
+      display: grid;
+      grid-auto-flow: column;
+      align-items: center;
+      column-gap: 14px;
+    }
+
+    .meetingInfo-time {
+      margin: 0;
+      font-family: 'Helvetica Neue';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 29px;
+      color: #101328;
+      grid-auto-flow: column;
+      align-items: center;
+      column-gap: 14px;
+    }
+
+    .meetingInfo-more {
+      margin: 0;
+      font-family: 'Helvetica Neue';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 19px;
+      color: #101328;
+      max-width: 100%;
+    }
+
+    .head {
+      margin: 0;
+      font-family: 'Helvetica Neue';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 29px;
+      text-align: center;
+      text-transform: lowercase;
+      color: #333896;
+    }
+    .wave {
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+    }
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.2.0/socket.io.min.js"></script>
+  <script>
+
+    function getCurrentDateTime() {
+      // Obtenir la date et l'heure actuelles
+      var currentDate = new Date();
+
+      // Obtenir l'heure au format HH:mm
+      var hours = String(currentDate.getHours()).padStart(2, '0');
+      var minutes = String(currentDate.getMinutes()).padStart(2, '0');
+      var currentTime = hours + ':' + minutes;
+
+      // Obtenir le jour de la semaine
+      var daysOfWeek = ['dimanche', 'lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi'];
+      var dayOfWeek = daysOfWeek[currentDate.getDay()];
+
+      // Obtenir le jour du mois
+      var dayOfMonth = currentDate.getDate();
+
+      // Obtenir le mois
+      var months = ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre'];
+      var month = months[currentDate.getMonth()];
+
+      // Obtenir l'année
+      var year = currentDate.getFullYear();
+
+      // Construire la chaîne de date au format "jeudi 22 juin 2023"
+      var currentDateTime = dayOfWeek + ' ' + dayOfMonth + ' ' + month + ' ' + year;
+
+      // Afficher l'heure et la date actuelles dans les éléments HTML correspondants
+      document.getElementsByClassName('time')[0].textContent = currentTime;
+      document.getElementsByClassName('date')[0].textContent = currentDateTime;
+    }
+
+    // Appeler la fonction getCurrentDateTime toutes les secondes
+    setInterval(getCurrentDateTime, 1000);
+    // Activer le mode plein écran
+    //     function toggleFullScreen() {
+    //   var doc = window.document;
+    //   var docEl = doc.documentElement;
+
+    //   var requestFullScreen = docEl.requestFullscreen || docEl.mozRequestFullScreen || docEl.webkitRequestFullScreen || docEl.msRequestFullscreen;
+    //   var cancelFullScreen = doc.exitFullscreen || doc.mozCancelFullScreen || doc.webkitExitFullscreen || doc.msExitFullscreen;
+
+    //   if (!doc.fullscreenElement && !doc.mozFullScreenElement && !doc.webkitFullscreenElement && !doc.msFullscreenElement) {
+    //     if (docEl.requestFullscreen) {
+    //       docEl.requestFullscreen().catch(function(error) {
+    //         console.log('Erreur lors de la demande de permission pour le mode plein écran:', error);
+    //       });
+    //     } else if (docEl.mozRequestFullScreen) {
+    //       docEl.mozRequestFullScreen().catch(function(error) {
+    //         console.log('Erreur lors de la demande de permission pour le mode plein écran:', error);
+    //       });
+    //     } else if (docEl.webkitRequestFullScreen) {
+    //       docEl.webkitRequestFullScreen().catch(function(error) {
+    //         console.log('Erreur lors de la demande de permission pour le mode plein écran:', error);
+    //       });
+    //     } else if (docEl.msRequestFullscreen) {
+    //       docEl.msRequestFullscreen().catch(function(error) {
+    //         console.log('Erreur lors de la demande de permission pour le mode plein écran:', error);
+    //       });
+    //     }
+    //   } else {
+    //     cancelFullScreen.call(doc);
+    //   }
+    // }
+    var socket = io.connect('http://192.168.43.242:3000/');
+    console.log("Consoled");
+    socket.on('update', function (message) {
+      console.log(message)
+      // console.log("Data received");
+      var timeElement = document.getElementsByClassName('time')[0];
+      var logoElement = document.getElementsByClassName('logo')[0];
+      var dateElement = document.getElementsByClassName('date')[0];
+      var connectStateElement = document.getElementsByClassName('connectState')[0];
+      var meetingTitleElement = document.getElementsByClassName('resumeInfo')[0];
+      var meetingTitleElement = document.getElementsByClassName('meetingTitle')[0];
+      var resumeInfoElement = document.getElementsByClassName('resumeInfo')[0];
+      var reminderInfoElement = document.getElementsByClassName('reminderInfo')[0];
+      var meetingInfoDateElement = document.getElementsByClassName('meetingInfo-date')[0];
+      var meetingInfoTimeElement = document.getElementsByClassName('meetingInfo-time')[0];
+      var meetingInfoMoreElement = document.getElementsByClassName('meetingInfo-more')[0];
+      var headElement = document.getElementsByClassName('head')[0];
+      var footerElement = document.getElementsByClassName('footer')[0];
+
+      if (message === "Init") {
+        if (logoElement !== undefined)
+          logoElement.style.display = 'block';
+        if (dateElement !== undefined)
+          dateElement.style.display = 'none';
+        if (timeElement !== undefined)
+          timeElement.style.display = "none";
+        if (connectStateElement !== undefined)
+          connectStateElement.style.display = "none";
+        if (meetingTitleElement !== undefined)
+          meetingTitleElement.style.display = "none";
+        if (meetingTitleElement !== undefined)
+          meetingTitleElement.style.display = "none";
+        if (resumeInfoElement !== undefined)
+          resumeInfoElement.style.display = "none";
+        if (reminderInfoElement !== undefined)
+          reminderInfoElement.style.display = "none";
+        if (meetingInfoDateElement !== undefined)
+          meetingInfoDateElement.style.display = "none";
+        if (meetingInfoTimeElement !== undefined)
+          meetingInfoTimeElement.style.display = "none";
+        if (meetingInfoMoreElement !== undefined)
+          meetingInfoMoreElement.style.display = "none";
+        if (headElement !== undefined)
+          headElement.style.display = "none";
+        if (footerElement !== undefined)
+          footerElement.style.display = "none";
+
+        // Afficher date et heure
+      }
+
+      if (message === "Default") {
+        if (timeElement !== undefined)
+          timeElement.style.display = "none";
+        if (logoElement !== undefined)
+          logoElement.style.display = "none";
+        if (dateElement !== undefined)
+          dateElement.style.display = "none";
+        if (connectStateElement !== undefined)
+          connectStateElement.style.display = "none";
+        if (meetingTitleElement !== undefined)
+          meetingTitleElement.style.display = "none";
+        if (meetingTitleElement !== undefined)
+          meetingTitleElement.style.display = "none";
+        if (resumeInfoElement !== undefined)
+          resumeInfoElement.style.display = "none";
+        if (reminderInfoElement !== undefined)
+          reminderInfoElement.style.display = "none";
+        if (meetingInfoDateElement !== undefined)
+          meetingInfoDateElement.style.display = "none";
+        if (meetingInfoTimeElement !== undefined)
+          meetingInfoTimeElement.style.display = "none";
+        if (meetingInfoMoreElement !== undefined)
+          meetingInfoMoreElement.style.display = "none";
+        if (headElement !== undefined)
+          headElement.style.display = "none";
+        if (footerElement !== undefined)
+          footerElement.style.display = "none";
+
+        if (timeElement !== undefined)
+          timeElement.style.display = 'block';
+        if (dateElement !== undefined)
+          dateElement.style.display = 'block';
+
+        // Afficher date et heure
+      }
+
+      if (message["titre"] === "Suppressed") {
+        if (timeElement !== undefined)
+          timeElement.style.display = "none";
+        if (logoElement !== undefined)
+          logoElement.style.display = "none";
+        if (dateElement !== undefined)
+          dateElement.style.display = "none";
+        if (connectStateElement !== undefined)
+          connectStateElement.style.display = "none";
+        if (meetingTitleElement !== undefined)
+          meetingTitleElement.style.display = "none";
+        if (meetingTitleElement !== undefined)
+          meetingTitleElement.style.display = "none";
+        if (resumeInfoElement !== undefined)
+          resumeInfoElement.style.display = "none";
+        if (reminderInfoElement !== undefined)
+          reminderInfoElement.style.display = "none";
+        if (meetingInfoDateElement !== undefined)
+          meetingInfoDateElement.style.display = "none";
+        if (meetingInfoTimeElement !== undefined)
+          meetingInfoTimeElement.style.display = "none";
+        if (meetingInfoMoreElement !== undefined)
+          meetingInfoMoreElement.style.display = "none";
+        if (headElement !== undefined)
+          headElement.style.display = "none";
+        if (footerElement !== undefined)
+          footerElement.style.display = "none";
+
+        if (meetingInfoDateElement !== undefined)
+          meetingInfoDateElement.style.display = 'grid';
+        if (meetingInfoTimeElement !== undefined)
+          meetingInfoTimeElement.style.display = 'grid';
+        if (footerElement !== undefined)
+          footerElement.style.display = 'block';
+
+        // Afficher date et heure
+      }
+
+      if (message === "Connecting") {
+        if (timeElement !== undefined)
+          timeElement.style.display = "none";
+        if (logoElement !== undefined)
+          logoElement.style.display = "none";
+        if (dateElement !== undefined)
+          dateElement.style.display = "none";
+        if (connectStateElement !== undefined)
+          connectStateElement.style.display = "none";
+        if (meetingTitleElement !== undefined)
+          meetingTitleElement.style.display = "none";
+        if (meetingTitleElement !== undefined)
+          meetingTitleElement.style.display = "none";
+        if (resumeInfoElement !== undefined)
+          resumeInfoElement.style.display = "none";
+        if (reminderInfoElement !== undefined)
+          reminderInfoElement.style.display = "none";
+        if (meetingInfoDateElement !== undefined)
+          meetingInfoDateElement.style.display = "none";
+        if (meetingInfoTimeElement !== undefined)
+          meetingInfoTimeElement.style.display = "none";
+        if (meetingInfoMoreElement !== undefined)
+          meetingInfoMoreElement.style.display = "none";
+        if (headElement !== undefined)
+          headElement.style.display = "none";
+        if (footerElement !== undefined)
+          footerElement.style.display = "none";
+
+        if (timeElement !== undefined)
+          timeElement.style.display = 'block';
+        if (dateElement !== undefined)
+          dateElement.style.display = 'none';
+        if (connectStateElement !== undefined) {
+          connectStateElement.style.display = 'block';
+          connectStateElement.innerText = "En cours de connexion...";
+        }
+
+        // Afficher seulement l'heure
+      }
+
+      if (message === "Connected") {
+        if (timeElement !== undefined)
+          timeElement.style.display = "none";
+        if (logoElement !== undefined)
+          logoElement.style.display = "none";
+        if (dateElement !== undefined)
+          dateElement.style.display = "none";
+        if (connectStateElement !== undefined)
+          connectStateElement.style.display = "none";
+        if (meetingTitleElement !== undefined)
+          meetingTitleElement.style.display = "none";
+        if (meetingTitleElement !== undefined)
+          meetingTitleElement.style.display = "none";
+        if (resumeInfoElement !== undefined)
+          resumeInfoElement.style.display = "none";
+        if (reminderInfoElement !== undefined)
+          reminderInfoElement.style.display = "none";
+        if (meetingInfoDateElement !== undefined)
+          meetingInfoDateElement.style.display = "none";
+        if (meetingInfoTimeElement !== undefined)
+          meetingInfoTimeElement.style.display = "none";
+        if (meetingInfoMoreElement !== undefined)
+          meetingInfoMoreElement.style.display = "none";
+        if (headElement !== undefined)
+          headElement.style.display = "none";
+        if (footerElement !== undefined)
+          footerElement.style.display = "none";
+
+        if (timeElement !== undefined)
+          timeElement.style.display = 'block';
+        if (dateElement !== undefined)
+          dateElement.style.display = 'none';
+        if (connectStateElement !== undefined) {
+          connectStateElement.style.display = 'block';
+          connectStateElement.innerText = "Connexion établie !";
+        }
+
+        // Afficher seulement l'heure
+      }
+
+      if (message["titre"] === "resume") {
+        if (timeElement !== undefined)
+          timeElement.style.display = "none";
+        if (logoElement !== undefined)
+          logoElement.style.display = "none";
+        if (dateElement !== undefined)
+          dateElement.style.display = "none";
+        if (connectStateElement !== undefined)
+          connectStateElement.style.display = "none";
+        if (meetingTitleElement !== undefined)
+          meetingTitleElement.style.display = "none";
+        if (meetingTitleElement !== undefined)
+          meetingTitleElement.style.display = "none";
+        if (resumeInfoElement !== undefined)
+          resumeInfoElement.style.display = "none";
+        if (reminderInfoElement !== undefined)
+          reminderInfoElement.style.display = "none";
+        if (meetingInfoDateElement !== undefined)
+          meetingInfoDateElement.style.display = "none";
+        if (meetingInfoTimeElement !== undefined)
+          meetingInfoTimeElement.style.display = "none";
+        if (meetingInfoMoreElement !== undefined)
+          meetingInfoMoreElement.style.display = "none";
+        if (headElement !== undefined)
+          headElement.style.display = "none";
+        if (footerElement !== undefined)
+          footerElement.style.display = "none";
+
+        if (resumeInfoElement !== undefined)
+          resumeInfoElement.style.display = "block";
+        if (headElement !== undefined)
+          headElement.style.display = "block";
+        if (meetingInfoTimeElement !== undefined)
+          meetingInfoTimeElement.style.display = "grid";
+        if (footerElement !== undefined)
+          footerElement.style.display = "block";
+      }
+
+      if (message["titre"] === "remind") {
+        if (timeElement !== undefined)
+          timeElement.style.display = "none";
+        if (logoElement !== undefined)
+          logoElement.style.display = "none";
+        if (dateElement !== undefined)
+          dateElement.style.display = "none";
+        if (connectStateElement !== undefined)
+          connectStateElement.style.display = "none";
+        if (meetingTitleElement !== undefined)
+          meetingTitleElement.style.display = "none";
+        if (meetingTitleElement !== undefined)
+          meetingTitleElement.style.display = "none";
+        if (resumeInfoElement !== undefined)
+          resumeInfoElement.style.display = "none";
+        if (reminderInfoElement !== undefined)
+          reminderInfoElement.style.display = "none";
+        if (meetingInfoDateElement !== undefined)
+          meetingInfoDateElement.style.display = "none";
+        if (meetingInfoTimeElement !== undefined)
+          meetingInfoTimeElement.style.display = "none";
+        if (meetingInfoMoreElement !== undefined)
+          meetingInfoMoreElement.style.display = "none";
+        if (headElement !== undefined)
+          headElement.style.display = "none";
+        if (footerElement !== undefined)
+          footerElement.style.display = "none";
+
+        if (reminderInfoElement !== undefined)
+          reminderInfoElement.style.display = "block";
+          reminderInfoElement.innerText = message["data"]["titre"]+" à "+message["data"]["heure"];
+        if (timeElement !== undefined)
+          timeElement.style.display = "block";
+      }
+
+      if (message["titre"] === "info") {
+        if (timeElement !== undefined)
+          timeElement.style.display = "none";
+        if (logoElement !== undefined)
+          logoElement.style.display = "none";
+        if (dateElement !== undefined)
+          dateElement.style.display = "none";
+        if (connectStateElement !== undefined)
+          connectStateElement.style.display = "none";
+        if (meetingTitleElement !== undefined)
+          meetingTitleElement.style.display = "none";
+        if (meetingTitleElement !== undefined)
+          meetingTitleElement.style.display = "none";
+        if (resumeInfoElement !== undefined)
+          resumeInfoElement.style.display = "none";
+        if (reminderInfoElement !== undefined)
+          reminderInfoElement.style.display = "none";
+        if (meetingInfoDateElement !== undefined)
+          meetingInfoDateElement.style.display = "none";
+        if (meetingInfoTimeElement !== undefined)
+          meetingInfoTimeElement.style.display = "none";
+        if (meetingInfoMoreElement !== undefined)
+          meetingInfoMoreElement.style.display = "none";
+        if (headElement !== undefined)
+          headElement.style.display = "none";
+        if (footerElement !== undefined)
+          footerElement.style.display = "none";
+
+        if (meetingInfoMoreElement !== undefined)
+          meetingInfoMoreElement.style.display = "block";
+        if (headElement !== undefined)
+          headElement.style.display = "block";
+        if (meetingInfoTimeElement !== undefined)
+          meetingInfoTimeElement.style.display = "grid";
+        if (footerElement !== undefined)
+          footerElement.style.display = "block";
+      }
+
+    });
+  // Appeler la fonction toggleFullScreen lorsque vous voulez activer le mode plein écran
+  // toggleFullScreen();
+  </script>
+</head>
+
+<body>
+  <img class="logo" src="{{ liveo }}" alt="Logo de liveo">
+  <div class="title">
+    <h1 class="time"></h1>
+    <!-- title -->
+    <h1 class="meetingTitle"></h1>
+  </div>
+  <!-- (current index) / (len total) -->
+  <h4 class="head"></h4>
+  <div class="sub">
+    <!-- date -->
+    <h3 class="date"></h3>
+    <h3 class="connectState"></h3>
+    <!-- title + time -->
+    <h3 class="reminderInfo"></h3>
+    <!-- title -->
+    <h3 class="resumeInfo"></h3>
+    <div class="meetingInfo">
+      <!-- date -->
+      <div class="meetingInfo-date">
+        <img src="{{ logo_date }}" alt="icone de la date">
+        <h3 class="meetingInfo-date-text"></h3>
+      </div>
+      <!-- time -->
+      <div class="meetingInfo-time">
+        <img src="{{ logo_time }}" alt="icone de l'heure">
+        <h3 class="meetingInfo-time-text"></h3>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <!-- additionnal info -->
+    <p class="meetingInfo-more"></p>
+  </div>
+  
+  <img class="wave" src="{{ wave }}" alt="">
+</body>
+
+</html>

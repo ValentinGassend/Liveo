@@ -1,0 +1,187 @@
+{
+    "entities": {
+        "type_rendez_vous": {
+            "automatically_extensible": true,
+            "data": [
+                {
+                    "value": "rendez-vous médical",
+                    "synonyms": [
+                        "consultation médicale",
+                        "visite chez le médecin"
+                    ]
+                },
+                {
+                    "value": "rendez-vous professionnel",
+                    "synonyms": [
+                        "entretien professionnel",
+                        "rendez-vous d'affaires"
+                    ]
+                },
+                {
+                    "value": "rendez-vous personnel",
+                    "synonyms": [
+                        "rendez-vous amical",
+                        "rendez-vous privé"
+                    ]
+                }
+            ],
+            "matching_strictness": 1.0,
+            "use_synonyms": true
+        },
+        "lieu": {
+            "automatically_extensible": true,
+            "use_synonyms": true,
+            "data": [
+                {
+                    "value": "clinique du parc",
+                    "synonyms": [
+                        "hôpital de la clinique du parc",
+                        "clinique"
+                    ]
+                },
+                {
+                    "value": "siège social de l'entreprise",
+                    "synonyms": [
+                        "bureau de l'entreprise",
+                        "siège"
+                    ]
+                },
+                {
+                    "value": "café Le Rendez-Vous",
+                    "synonyms": [
+                        "Le Rendez-Vous",
+                        "café"
+                    ]
+                }
+            ]
+        },
+        "details_rendez_vous": {
+            "automatically_extensible": true,
+            "use_synonyms": true,
+            "data": [
+                {
+                    "value": "Dr. Martin",
+                    "synonyms": [
+                        "docteur Martin",
+                        "médecin traitant"
+                    ]
+                },
+                {
+                    "value": "M. Dupont",
+                    "synonyms": [
+                        "Monsieur Dupont",
+                        "responsable des ventes"
+                    ]
+                },
+                {
+                    "value": "Mme. Lambert",
+                    "synonyms": [
+                        "Madame Lambert",
+                        "directrice des ressources humaines"
+                    ]
+                }
+            ]
+        },
+        "snips/date": {},
+        "snips/time": {}
+    },
+    "intents": {
+        "prendreRendezVousMedical": {
+            "utterances": [
+                {
+                    "data": [
+                        {
+                            "text": "Je voudrais prendre un "
+                        },
+                        {
+                            "entity": "type_rendez_vous",
+                            "slot_name": "type_rendez_vous",
+                            "text": "rendez-vous médical"
+                        },
+                        {
+                            "text": " avec le "
+                        },
+                        {
+                            "entity": "details_rendez_vous",
+                            "slot_name": "details_rendez_vous",
+                            "text": "Dr. Martin"
+                        },
+                        {
+                            "text": " à la "
+                        },
+                        {
+                            "entity": "lieu",
+                            "slot_name": "lieu",
+                            "text": "clinique du parc"
+                        },
+                        {
+                            "text": " le "
+                        },
+                        {
+                            "entity": "snips/date",
+                            "slot_name": "date",
+                            "text": "3 juin"
+                        },
+                        {
+                            "text": " à "
+                        },
+                        {
+                            "entity": "snips/time",
+                            "slot_name": "heure",
+                            "text": "10h00"
+                        }
+                    ]
+                }
+            ]
+        },
+        "prendreRendezVousProfessionnel": {
+            "utterances": [
+                {
+                    "data": [
+                        {
+                            "text": "Je voudrais prendre un "
+                        },
+                        {
+                            "entity": "type_rendez_vous",
+                            "slot_name": "type_rendez_vous",
+                            "text": "rendez-vous professionnel"
+                        },
+                        {
+                            "text": " avec "
+                        },
+                        {
+                            "entity": "details_rendez_vous",
+                            "slot_name": "details_rendez_vous",
+                            "text": "M. Dupont"
+                        },
+                        {
+                            "text": " au "
+                        },
+                        {
+                            "entity": "lieu",
+                            "slot_name": "lieu",
+                            "text": "siège social de l'entreprise"
+                        },
+                        {
+                            "text": " le "
+                        },
+                        {
+                            "entity": "snips/date",
+                            "slot_name": "date",
+                            "text": "21 mai"
+                        },
+                        {
+                            "text": " à "
+                        },
+                        {
+                            "entity": "snips/time",
+                            "slot_name": "heure",
+                            "text": "15h00"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "language": "fr"
+}

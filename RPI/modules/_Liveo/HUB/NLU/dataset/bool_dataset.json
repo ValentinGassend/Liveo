@@ -1,0 +1,84 @@
+{
+    "entities": {},
+    "intents": {
+        "affirmation": {
+            "utterances": [
+                {
+                    "data": [
+                        {
+                            "text": "Oui"
+                        }
+                    ]
+                },
+                {
+                    "data": [
+                        {
+                            "text": "Bien sûr"
+                        }
+                    ]
+                },
+                {
+                    "data": [
+                        {
+                            "text": "Absolument"
+                        }
+                    ]
+                },
+                {
+                    "data": [
+                        {
+                            "text": "C'est vrai"
+                        }
+                    ]
+                },
+                {
+                    "data": [
+                        {
+                            "text": "Exactement"
+                        }
+                    ]
+                }
+            ]
+        },
+        "negation": {
+            "utterances": [
+                {
+                    "data": [
+                        {
+                            "text": "Non"
+                        }
+                    ]
+                },
+                {
+                    "data": [
+                        {
+                            "text": "Pas du tout"
+                        }
+                    ]
+                },
+                {
+                    "data": [
+                        {
+                            "text": "Certainement pas"
+                        }
+                    ]
+                },
+                {
+                    "data": [
+                        {
+                            "text": "Je ne pense pas"
+                        }
+                    ]
+                },
+                {
+                    "data": [
+                        {
+                            "text": "Pas vraiment"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "language": "fr"
+}

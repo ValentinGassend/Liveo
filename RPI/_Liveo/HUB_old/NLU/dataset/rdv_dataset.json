@@ -1,0 +1,118 @@
+{
+    "entities": {
+        "meeting_type": {
+            "automatically_extensible": true,
+            "data": [
+                {
+                    "value": "réunion",
+                    "synonyms": [
+                        "rencontre",
+                        "rendez-vous"
+                    ]
+                },
+                {
+                    "value": "dîner",
+                    "synonyms": [
+                        "repas"
+                    ]
+                },
+                {
+                    "value": "déjeuner",
+                    "synonyms": [
+                        "repas"
+                    ]
+                }
+            ],
+            "matching_strictness": 1.0,
+            "use_synonyms": true
+        },
+        "snips/datetime": {}
+    },
+    "intents": {
+        "scheduleMeeting": {
+            "utterances": [
+                {
+                    "data": [
+                        {
+                            "text": "Planifiez une "
+                        },
+                        {
+                            "entity": "meeting_type",
+                            "slot_name": "meeting_type",
+                            "text": "réunion"
+                        },
+                        {
+                            "text": " pour "
+                        },
+                        {
+                            "entity": "snips/datetime",
+                            "slot_name": "meeting_time",
+                            "text": "demain à 15h"
+                        }
+                    ]
+                },
+                {
+                    "data": [
+                        {
+                            "text": "Planifiez un "
+                        },
+                        {
+                            "entity": "meeting_type",
+                            "slot_name": "meeting_type",
+                            "text": "dîner"
+                        },
+                        {
+                            "text": " pour "
+                        },
+                        {
+                            "entity": "snips/datetime",
+                            "slot_name": "meeting_time",
+                            "text": "vendredi prochain à 19h30"
+                        }
+                    ]
+                },
+                {
+                    "data": [
+                        {
+                            "text": "Organisez un "
+                        },
+                        {
+                            "entity": "meeting_type",
+                            "slot_name": "meeting_type",
+                            "text": "déjeuner"
+                        },
+                        {
+                            "text": " pour "
+                        },
+                        {
+                            "entity": "snips/datetime",
+                            "slot_name": "meeting_time",
+                            "text": "mercredi à midi"
+                        }
+                    ]
+                },
+                {
+                    "data": [
+                        {
+                            "text": "Programmez un "
+                        },
+                        {
+                            "entity": "meeting_type",
+                            "slot_name": "meeting_type",
+                            "text": "rendez-vous"
+                        },
+                        {
+                            "text": " pour "
+                        },
+                        {
+                            "entity": "snips/datetime",
+                            "slot_name": "meeting_time",
+                            "text": "lundi à 10h"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "language": "fr"
+}
